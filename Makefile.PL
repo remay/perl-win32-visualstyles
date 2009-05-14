@@ -10,7 +10,7 @@ my %config = (
     NAME          => 'Win32::VisualStyles',
     VERSION_FROM  => 'VisualStyles.pm',
     ABSTRACT_FROM => 'VisualStyles.pm',
-    AUTHOR        => 'Robert May <robertemay@users.sourceforge.net>',
+    AUTHOR        => 'Robert May <robertmay@cpan.org>',
     PL_FILES      => {'$(BASEEXT).manifest.PL' => '$(BASEEXT).manifest',
                       '$(BASEEXT).version.PL'  => '$(BASEEXT).version' },
     depend        => {'$(BASEEXT).res' => '$(BASEEXT).manifest $(BASEEXT).version', },

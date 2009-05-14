@@ -1,0 +1,11 @@
+- See if we can find a way to get back to a V5 context
+  if perl.exe has a manifest requesting v6 comctl32.
+- Check that we are doing the right thing with the
+  processorArchitecture attributes in teh manifest.
+- Check 64 bit builds
+- Simplify the manifest building process?
+- Automatically update the version in the manifest
+  (technically never used, but good practice)
+- Automate the update of dates etc. in the
+  version Info definiton (VisualStyles.version.PL)
+- Find a way to embed build date in the version info

@@ -2,6 +2,10 @@
 use strict;
 use warnings;
 
+# XXX: $arch is currently unused.  So long as is turns out
+# that not specifying a processorArchitecture (or using "*")
+# works, then this file can be removed and replaced with a
+# static VisualStyles.manifest
 my $arch = $ENV{PROCESSOR_ARCHITECTURE};
  
 my $file = shift;
@@ -15,18 +19,16 @@ print <<"EOT";
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
 	<assemblyIdentity
-		version="0.0.0.0"
-		processorArchitecture="$arch"
+		version="00.00.02.00"
         name="Perl.Win32.VisualStyles"
-        type="Win32" />
+        type="win32" />
     <description>Perl extension for enabling Visual (aka XP) Styles.</description>
     <dependency>
         <dependentAssembly>
             <assemblyIdentity
-                 type="Win32"
+                 type="win32"
                  name="Microsoft.Windows.Common-Controls"
                  version="6.0.0.0"
-                 processorArchitecture="$arch"
                  publicKeyToken="6595b64144ccf1df"
                  language="*" />
         </dependentAssembly>
