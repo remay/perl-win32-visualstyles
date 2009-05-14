@@ -1,6 +1,7 @@
 0.00_03 XX May 2009 - * Remove processorArchitecture from manifset.  The
                         spec says it's optional and if it works then it'll
                         simplify the build and porting to x64.
+                      * Add TODO file
 
 0.00_02 05 May 2009 - Comments incorporated;
                       * LoadLibraryW changed to LoadLibraryA.
