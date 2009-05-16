@@ -1,58 +1,5 @@
 Win32::VisualStyles - Apply Win32 Visual (aka XP) Styles to windows
 
-SYNOPSIS
-
-  use Win32::VisualStyles;   # enable visual styles
-
-  # Turn on visual styles from the command line
-  C:\> perl -MWin32::VisualStyles script.pl
-
-  my $styles = Win32::VisualStyles::GetThemeAppProperties();
-  Win32::VisualStyles::SetThemeAppProperties($styles);
-
-  use Win32::VisualStyles qw(IsThemeActive IsAppThemed);
-  my $global_styles_enabled = IsThemeActive();
-  my $app_styles_enabled    = IsAppThemed();
-
-  use Win32::VisualStyles qw(GetThemeAppProperties :use_default_context);
-    # Get access to GetThemeAppProperties() without changing the
-    # activation context
-
-  if( control_styles_active() ) {
-    # Do something if styles are active for this app.
-  }
-
-DESCRIPTION
-
- This module modifies the run-time environment (the "activation context")
- of a Win32 process to control Visual Styles (aka XP Styles).
-
- Visual Styles are the new graphical designs used for user interface
- components starting from Windows XP.  You may also hear them refered
- to using the informal term 'v6 manifest'.
-
- By default this module enables styles for all graphical components that
- support them, and that are created after the module is loaded.  There
- may well be side effects on graphical components created before this
- module is loaded, so it is recommended to load this module as early
- in your program as possible. It is possible to override the default
- behaviour by passing the C<< :use_default_context >> tag on the
- import line.
-
- Note that the effect is global, and so this module should not be used
- by module authors themselves.
-
- On Operating systems that do not support Visual Styles (i.e. before
- Windows XP) this module should have no effect, so it is safe to call
- unconditionally from your script - although if you expect you script
- to be run on multiple platforms you should check that it looks
- correct on each target platform.
-
- In cases where different code needs to be run when Styles are active
- then you can call the "Win32::VisualStyles::control_styles_active()"
- function which will return a true value when visual styles are
- actually in use.
-
 INSTALLING
 
  The perl standard build process is followed:
@@ -61,7 +8,6 @@ INSTALLING
   [n|d]make
   [n|d]make test
   [n|d]make install
-
 
  Should build with no warnings using MS Visual C compiler (MSCV6 and upwards).
 
@@ -72,10 +18,13 @@ INSTALLING
  To build under Cygwin: This has not been tested, but should have the
  same constrains as building with Mingw/gcc above.
 
+ x64 builds: This has not been tested, but there is no known reason why
+ this should not work.
+
 SEEING IT IN ACTION
 
- If you have the Win32::GUI module available then there is a script
- themes.pl that you can run to see the effect of the various API calls.
+ If you have the Win32::GUI module available then there is a script,
+ themes.pl, that you can run to see the effect of the various API calls.
 
  Otherwise try these one-liners:
 
@@ -84,4 +33,4 @@ SEEING IT IN ACTION
 
 AUTHOR
 
- Robert May <robertemay@users.sourceforge.net>
+ Robert May <robertmay@cpan.org>

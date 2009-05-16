@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.00_02';
+our $VERSION = '0.01';
 our $XS_VERSION = $VERSION;
 $VERSION = eval $VERSION;
 
@@ -32,14 +32,8 @@ our %EXPORT_TAGS = (
                        IsThemeActive
                        control_styles_active
                 )],
+    all       => [ @EXPORT_OK ],
                    );
-
-{   # Construct :all tag
-    my %seen;
-
-    push @{$EXPORT_TAGS{all}},
-        grep {!$seen{$_}++} @{$EXPORT_TAGS{$_}} foreach keys %EXPORT_TAGS;
-}
 
 require XSLoader;
 XSLoader::load('Win32::VisualStyles', $XS_VERSION);
@@ -107,7 +101,7 @@ Win32::VisualStyles - Apply Win32 Visual (aka XP) Styles to windows
     # Get access to GetThemeAppProperties() without changing the
     # activation context
 
-  if( control_styles_active() ) {
+  if( Win32::VisualStyles::control_styles_active() ) {
     # Do something if styles are active for this app.
   }
 
@@ -118,15 +112,17 @@ of a Win32 process to control Visual Styles (aka XP Styles).
 
 Visual Styles are the new graphical designs used for user interface
 components starting from Windows XP.  You may also hear them refered
-to using the informal term 'v6 manifest'.
+to using the informal term 'v6 manifest'.  They are implemented by
+v6 of Comctl32.dll.
 
-By default this module enables styles for all graphical components that
+By default this module enables visual styles for all graphical components that
 support them, and that are created after the module is loaded.  There
 may well be side effects on graphical components created before this
 module is loaded, so it is recommended to load this module as early
-in your program as possible. It is possible to override the default
+in your program as possible. It is possible to override this default
 behaviour by passing the C<< :use_default_context >> tag on the
-import line.
+import line - this allows you to load the module without enabling
+visual styles.
 
 Note that the effect is global, and so this module should not be used
 by module authors themselves.
@@ -196,8 +192,8 @@ C<< STAP_ALLOW_WEBCONTENT >>.
 This pseudo-tag, when passed on the import line prevents this module
 from altering the activation context. Use this when you just want
 assess to the functions provided without forcing visual styles to be
-enabled. Whether visual styles are actuall enabled or not will depend
-in the build and environment of the perl you are using.
+enabled. Whether visual styles are actually enabled or not will depend
+on the build and environment of the perl you are using.
 
 =back
 
@@ -238,7 +234,7 @@ If true, themes are active for controls (buttons etc.) within html
                         STAP_ALLOW_WEBCONTENT);
 
 Sets a mask of bits enabling/disabling themes in various parts of the
-window.  This call will have no effect of operating systems that don't
+window.  This call will have no effect on operating systems that don't
 support themes, or when the OS has disabled themes for the
 application.  Note that in the latter case this call will affect the
 return value from C<< GetThemeAppProperties() >>.

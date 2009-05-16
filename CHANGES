@@ -1,7 +1,10 @@
-0.00_03 XX May 2009 - * Remove processorArchitecture from manifset.  The
-                        spec says it's optional and if it works then it'll
-                        simplify the build and porting to x64.
+0.01    16 May 2009 - * Removed processorArchitecture from assemblyIdentity
+                        and changed it to "*" in the dependentAssembly
+                        in the manifset.  This should make building on
+                        x64 not require a dynamically generated manifest.
                       * Add TODO file
+                      * Documentation clean up
+                      * First CPAN release
 
 0.00_02 05 May 2009 - Comments incorporated;
                       * LoadLibraryW changed to LoadLibraryA.
