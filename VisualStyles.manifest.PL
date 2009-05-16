@@ -6,6 +6,10 @@ use warnings;
 # that not specifying a processorArchitecture (or using "*")
 # works, then this file can be removed and replaced with a
 # static VisualStyles.manifest
+# ** Totally removing the processorArchitecute attributes
+# causes load failures.  Using * for the processorArchitecture
+# in the dependantAssembly appears to work (on x86 at least)
+# - needs testing on x64
 my $arch = $ENV{PROCESSOR_ARCHITECTURE};
  
 my $file = shift;
@@ -30,6 +34,7 @@ print <<"EOT";
                  name="Microsoft.Windows.Common-Controls"
                  version="6.0.0.0"
                  publicKeyToken="6595b64144ccf1df"
+                 processorArchitecture="*"
                  language="*" />
         </dependentAssembly>
     </dependency>
