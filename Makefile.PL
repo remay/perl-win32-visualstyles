@@ -18,7 +18,6 @@ my %config = (
     macro         => { RC => 'rc.exe',
                        RCFLAGS => '',
                      },
-    EXE_FILES     => ['script\themes.pl'],
     clean         => { FILES => '$(BASEEXT).manifest $(BASEEXT).version', },
 );
 
