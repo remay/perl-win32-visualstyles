@@ -289,7 +289,7 @@ Contact the author for support.
 
 =head1 AUTHORS
 
-Robert May (C<robertemay@users.sourceforge.net>)
+Robert May (C<robertmay@cpan.org>)
 
 =head1 COPYRIGHT AND LICENSE
 
