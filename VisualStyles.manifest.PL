@@ -5,7 +5,7 @@ use ExtUtils::MakeMaker;
 
 my $version = MM->parse_version('VisualStyles.pm');
 $version .= "_00" unless $version =~ m/_/;
-$version = sprintf("%02d,%02d,%02d,00", $version =~ m/^(.*)\.([^_]*)_?(.*)$/);
+$version = sprintf("%02d.%02d.%02d.00", $version =~ m/^(.*)\.([^_]*)_?(.*)$/);
 
 # XXX: $arch is currently unused.  So long as is turns out
 # that not specifying a processorArchitecture (or using "*")
