@@ -1,6 +1,11 @@
 #!perl -w
 use strict;
 use warnings;
+use ExtUtils::MakeMaker;
+
+my $version = MM->parse_version('VisualStyles.pm');
+$version .= "_00" unless $version =~ m/_/;
+$version = sprintf("%02d,%02d,%02d,00", $version =~ m/^(.*)\.([^_]*)_?(.*)$/);
 
 # XXX: $arch is currently unused.  So long as is turns out
 # that not specifying a processorArchitecture (or using "*")
@@ -23,7 +28,7 @@ print <<"EOT";
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
 	<assemblyIdentity
-		version="00.01.00.00"
+		version="$version"
         name="Perl.Win32.VisualStyles"
         type="win32" />
     <description>Perl extension for enabling Visual (aka XP) Styles.</description>
