@@ -1,3 +1,6 @@
+0.0X    XX XXX 2009 - * 'OS Unsupported' unless Win32 or Cygwin to assist
+                        smokers reporting something more useful.
+
 0.01    16 May 2009 - * Removed processorArchitecture from assemblyIdentity
                         and changed it to "*" in the dependentAssembly
                         in the manifset.  This should make building on

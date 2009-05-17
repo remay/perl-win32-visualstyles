@@ -6,6 +6,10 @@ use 5.006;
 use ExtUtils::MakeMaker;
 use Config();
 
+unless ($^O eq "MSWin32" || $^O eq "cygwin") {
+    die "OS unsupported\n";
+}
+
 my %config = (
     NAME          => 'Win32::VisualStyles',
     VERSION_FROM  => 'VisualStyles.pm',
