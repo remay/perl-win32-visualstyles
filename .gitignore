@@ -2,17 +2,21 @@
 Makefile
 blib/
 pm_to_blib
+*.def
+*.bs
 
 # Generated files
 VisualStyles.c
 VisualStyles.manifest
 VisualStyles.version
 
-# Build by-products
+# Build by-products (GCC)
 *.res
 *.o
-*.obj
-*.def
-*.bs
 dll.base
 dll.exp
+
+# Build by-products (CL)
+*.RES
+*.obj
+*.pdb
