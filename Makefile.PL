@@ -41,7 +41,7 @@ my %config = (
     ($mm_ver <= 6.45 ? () : (META_MERGE => {
         resources => {
             license     =>      'http://dev.perl.org/licenses/',
-            homepage    =>      'http://rob.themayfamily.me.uk/win32-gui/win32-visualstyles',
+            homepage    =>      'http://rob.themayfamily.me.uk/perl/win32-visualstyles',
             bugtracker  =>      'http://rt.cpan.org/Public/Bug/Report.html?Queue=Win32-VisualStyles',
             repository  =>      'http://github.com/remay/perl-win32-visualstyles',
                      },

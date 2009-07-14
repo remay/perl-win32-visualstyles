@@ -1,4 +1,4 @@
-0.0X    XX XXX 2009 - * 'OS Unsupported' unless Win32 or Cygwin to assist
+0.02    14 Jul 2009 - * 'OS Unsupported' unless Win32 or Cygwin to assist
                         smokers reporting something more useful.
                       * Add LICENCE file.
                       * Add INSTALL file. Split README.
