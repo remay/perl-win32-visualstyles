@@ -57,7 +57,7 @@ sub import {
     if($apply_context) {
         if($_V6_CONTEXT_APPLIED) {
             require Carp;
-            Carp:carp("Attempt to apply activation context more than once ignored");
+            Carp::carp("Attempt to apply activation context more than once ignored");
         }
         else {
             $_V6_CONTEXT_APPLIED = _SetActivationContext();
