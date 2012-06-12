@@ -129,7 +129,7 @@ by module authors themselves.
 
 On Operating systems that do not support Visual Styles (i.e. before
 Windows XP) this module should have no effect, so it is safe to call
-unconditionally from your script - although if you expect you script
+unconditionally from your script - although if you expect your script
 to be run on multiple platforms you should check that it looks
 correct on each target platform.
 
@@ -243,7 +243,7 @@ Bitmask bits are as for C<< GetThemeAppProperties >>.
 
 =head2 IsThemeActive
 
-  my $themes_globally_enable = IsThemeActive()
+  my $themes_globally_enabled = IsThemeActive()
 
 Returns a boolean value indicating whether the OS has globally
 disabled/enabled visual styles.  The return value may be controlled by
